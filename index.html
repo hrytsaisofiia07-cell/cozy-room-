@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Room Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- INTRO SCREEN -->
+  <div class="room">
+    <img src="your-room.jpg" class="room-img" />
+
+    <div class="overlay">
+      <div class="intro-text">
+        <h1>Welcome to My Room</h1>
+        <p>Tap to enter a cozy place ✨</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- MAIN ROOM -->
+  <div id="mainContent">
+
+    <div class="scene">
+
+      <!-- FLOOR -->
+      <img src="images/rug.png" class="rug">
+
+      <!-- BACKGROUND -->
+      <img src="images/background.png" class="bg">
+
+      <!-- WINDOW / DOOR (interactive) -->
+       <div id="hint" class="hint">
+       Tap to bring fresh air and thoughts
+       </div>
+    
+      <img src="images/window.png" id="window" class="window">
+      <img src="images/door.png" id="door" class="door hidden">
+
+      <!-- FURNITURE -->
+      <img src="images/shelf.png" class="shelf">
+      <img src="images/music.png" class="music">
+      <img src="images/sofa.png" class="sofa">
+      <img src="images/table.png" class="table">
+
+      <!-- DECOR -->
+      <img src="images/flower.png" class="flower">
+
+      <!-- TV -->
+      <img src="images/tv.png" class="tv" alt="tv">
+
+    </div>
+
+  </div>
+
+ <script>
+const overlay = document.querySelector(".overlay");
+
+overlay.addEventListener("click", () => {
+  overlay.style.opacity = "0";
+  overlay.style.transition = "0.8s";
+
+  setTimeout(() => {
+    overlay.style.display = "none";
+  }, 800);
+});
+
+const windowEl = document.getElementById("window");
+const doorEl = document.getElementById("door");
+
+windowEl.addEventListener("click", () => {
+  windowEl.style.display = "none";
+  doorEl.classList.remove("hidden");
+});
+</script>
